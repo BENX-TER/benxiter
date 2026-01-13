@@ -22,33 +22,32 @@ body { background: var(--black); color: white; font-family: 'Fira Code', monospa
 .red { color: var(--red); text-shadow: 0 0 10px var(--red); }
 .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 11px; font-weight: bold; }
 
-.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
 .main-title { font-family: 'Syncopate'; font-size: clamp(40px, 10vw, 80px); }
 .red-glow { color: var(--red); text-shadow: 0 0 20px var(--red); }
 .inject-btn { border: 2px solid var(--red); padding: 20px 40px; color: var(--red); margin-top: 30px; font-weight: 900; }
 
-/* PAID PANELS GRID */
 .module-section { padding: 100px 10%; }
-.label-tag { font-size: 11px; color: #333; letter-spacing: 5px; margin-bottom: 30px; }
+.label-tag { font-size: 11px; color: #444; letter-spacing: 5px; margin-bottom: 30px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.neon-card { border: 2px solid var(--red); padding: 40px; background: rgba(10,0,0,0.8); transition: 0.3s; }
-.neon-card:hover { transform: scale(1.02); box-shadow: 0 0 25px var(--red); }
+.neon-card { border: 2px solid var(--red); padding: 40px; background: rgba(10,0,0,0.8); }
 .pulse-text { color: var(--red); font-size: 11px; margin-top: 10px; animation: pulse 1.5s infinite; font-weight: bold; }
 @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; text-shadow: 0 0 15px var(--red); } }
 
 .god-spacer { height: 350px; }
 .download-section { text-align: center; padding-bottom: 200px; }
-.title-big { font-family: 'Syncopate'; font-size: clamp(30px, 8vw, 60px); margin-bottom: 40px; }
+.title-big { font-family: 'Syncopate'; font-size: clamp(30px, 6vw, 55px); margin-bottom: 40px; }
 .dl-box { border: 2px solid var(--red); padding: 50px; background: black; display: inline-block; }
 .dl-main-btn { background: var(--red); color: white; padding: 15px 30px; margin-top: 20px; font-weight: 900; }
 
-/* SPEC BOT */
-#spec-bot { position: fixed; bottom: 20px; right: 20px; width: 220px; background: rgba(0,0,0,0.9); border: 1px solid var(--red); font-size: 10px; z-index: 1000; box-shadow: 0 0 15px var(--red); }
+/* UPGRADED SPEC BOT */
+#spec-bot { position: fixed; bottom: 20px; right: 20px; width: 260px; background: rgba(0,0,0,0.9); border: 1px solid var(--red); font-size: 10px; z-index: 1000; box-shadow: 0 0 15px var(--red); }
 .bot-header { background: var(--red); color: white; padding: 5px 10px; font-weight: bold; }
-.bot-body { padding: 10px; line-height: 1.8; }
-.bot-body span { color: var(--red); }
-.blink-green { color: #0f0 !important; animation: blink 1s infinite; }
-@keyframes blink { 50% { opacity: 0; } }
+.bot-body { padding: 15px; line-height: 1.6; }
+.bot-body p { margin-bottom: 4px; border-bottom: 1px solid #111; padding-bottom: 2px; }
+.bot-body span { color: var(--red); float: right; font-weight: bold; }
+.blink-green { color: #0f0 !important; animation: blink 1.5s infinite; }
+@keyframes blink { 50% { opacity: 0.2; } }
 
 #particles-js { position: fixed; inset: 0; z-index: -1; }
 .scanlines { position: fixed; inset: 0; background: linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.1) 50%); background-size: 100% 4px; z-index: 5; pointer-events: none; }
