@@ -10,7 +10,7 @@
 <body class="brutal-ui">
 
     <div class="scanlines"></div>
-    <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: 1;"></div>
+    <div id="particles-js"></div>
 
     <nav class="terminal-nav">
         <div class="status-indicator">
@@ -20,6 +20,7 @@
             <a href="#home">[ HOME ]</a>
             <a href="#features">[ MODULES ]</a>
             <a href="#download">[ DOWNLOAD ]</a>
+            <a href="https://discord.gg/yourlink" target="_blank" class="discord-nav">[ DISCORD ]</a>
         </div>
     </nav>
 
@@ -30,7 +31,13 @@
                 <p>> BOOTING SYSTEM...</p>
                 <p>> STATUS: <span class="red-bright">UNDETECTED</span></p>
             </div>
-            <a href="#download" class="brutal-btn">EXECUTE_INJECTION</a>
+            
+            <div class="injection-wrapper">
+                <a href="#download" class="btn-inject">
+                    <span class="btn-text">INITIALIZE_INJECTION</span>
+                    <span class="btn-scan"></span>
+                </a>
+            </div>
         </section>
 
         <section id="features" class="module-section">
@@ -51,9 +58,10 @@
                 <div class="vault-header">AUTHENTICATED_ACCESS</div>
                 <h2>LAG_FIXER_V1.EXE</h2>
                 <p>Advanced Kernel optimizer for BENX!TER users.</p>
-                <a href="https://drive.google.com/file/d/10hIuzEnvGMkQz3aklbd7BRpvZ90kDtdK/view?usp=sharing" target="_blank" class="download-brutal-btn">
-                    DOWNLOAD NOW
-                </a>
+                <div class="dual-btns">
+                    <a href="https://drive.google.com/file/d/10hIuzEnvGMkQz3aklbd7BRpvZ90kDtdK/view?usp=sharing" target="_blank" class="download-brutal-btn">DOWNLOAD_MODULE</a>
+                    <a href="https://discord.gg/yourlink" target="_blank" class="discord-big-btn">JOIN_COMMUNITY</a>
+                </div>
             </div>
         </section>
     </main>
