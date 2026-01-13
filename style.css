@@ -6,76 +6,69 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
-body { 
-    background-color: var(--black); 
-    color: var(--red); 
-    font-family: var(--font-main);
-    overflow-x: hidden;
-}
+html { scroll-behavior: smooth; }
+body { background-color: var(--black); color: var(--red); font-family: var(--font-main); overflow-x: hidden; }
 
-/* Scanline Effect */
+/* Scanlines Overlap Fix */
 .scanlines {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    background-size: 100% 4px, 3px 100%;
-    z-index: 100; pointer-events: none;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
+    background-size: 100% 4px; z-index: 100; pointer-events: none;
 }
 
 #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
 .terminal-wrapper { position: relative; z-index: 10; padding: 0 5%; }
 
-/* Terminal Nav */
+/* Navigation Bar Fix */
 .terminal-nav {
-    display: flex; justify-content: space-between; padding: 20px 5%;
-    border-bottom: 1px solid var(--dark-red); background: rgba(0,0,0,0.8);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%; border-bottom: 1px solid var(--dark-red);
+    background: rgba(0,0,0,0.9); position: fixed; width: 100%; top: 0; z-index: 1000;
 }
 .blink { animation: blinker 1s linear infinite; color: #00ff00; }
 @keyframes blinker { 50% { opacity: 0; } }
-.nav-links a { color: var(--red); text-decoration: none; margin-left: 20px; font-size: 14px; }
-.nav-links a:hover { background: var(--red); color: black; }
 
-/* Hero */
-.hero-brutal { height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+.nav-links a { 
+    color: var(--red); text-decoration: none; margin-left: 20px; 
+    font-size: 12px; font-weight: 700; transition: 0.2s;
+    padding: 5px 10px; border: 1px solid transparent;
+}
+.nav-links a:hover { border-color: var(--red); background: var(--dark-red); }
+
+/* Hero Section */
+.hero-brutal { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; }
 .glitch {
-    font-size: clamp(50px, 10vw, 120px);
-    font-family: 'Syncopate', sans-serif;
-    font-weight: 900;
-    position: relative;
-    text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.025em -0.05em 0 rgba(0,255,0,0.75);
-    animation: glitch 500ms infinite;
+    font-size: clamp(40px, 10vw, 100px); font-family: 'Syncopate', sans-serif;
+    position: relative; text-shadow: 2px 0 0 rgba(255,0,0,0.5), -2px 0 0 rgba(0,255,0,0.5);
+    animation: glitch 0.3s infinite;
+}
+@keyframes glitch { 
+    0% { transform: skew(2deg); } 20% { transform: skew(-2deg); } 100% { transform: skew(0); } 
 }
 
-@keyframes glitch {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-    100% { transform: translate(0); }
+/* Modules Section */
+.module-section { padding: 100px 0; }
+.section-tag { margin-bottom: 30px; font-weight: 900; letter-spacing: 5px; opacity: 0.6; }
+.module-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px; 
 }
-
-.console-text { margin: 30px 0; background: rgba(255,0,0,0.05); padding: 20px; border-left: 3px solid var(--red); }
-.red-bright { color: #fff; text-shadow: 0 0 10px var(--red); }
-
-/* Buttons */
-.brutal-btn {
-    display: inline-block; padding: 20px 40px; border: 2px solid var(--red);
-    color: var(--red); text-decoration: none; font-weight: 700; transition: 0.3s;
+.module-card { 
+    border: 1px solid var(--dark-red); padding: 25px; 
+    background: rgba(10, 0, 0, 0.6); transition: 0.3s;
 }
-.brutal-btn:hover { background: var(--red); color: black; box-shadow: 0 0 30px var(--red); }
-
-/* Module Cards */
-.module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 100px 0; }
-.module-card { border: 1px solid var(--dark-red); padding: 30px; background: rgba(0,0,0,0.5); }
-.module-card:hover { border-color: var(--red); background: rgba(255,0,0,0.05); }
-.module-header { font-weight: 900; margin-bottom: 15px; border-bottom: 1px solid var(--dark-red); padding-bottom: 10px; }
+.module-card h3 { font-size: 14px; margin-bottom: 10px; letter-spacing: 1px; }
+.module-card p { font-size: 11px; color: #666; }
+.module-card:hover { border-color: var(--red); background: var(--dark-red); transform: scale(1.02); }
+.glow-red { border-color: var(--red); box-shadow: inset 0 0 15px rgba(255,0,0,0.2); }
 
 /* Download Section */
-.vault-brutal { padding: 100px 0; }
-.brutal-container { border: 2px solid var(--red); padding: 50px; background: #000; box-shadow: 10px 10px 0 var(--dark-red); }
-.vault-header { background: var(--red); color: black; padding: 5px 15px; font-weight: 900; display: inline-block; margin-bottom: 20px; }
+.vault-brutal { padding: 100px 0 200px; }
+.brutal-container { border: 2px solid var(--red); padding: 40px; background: #000; position: relative; }
+.vault-header { background: var(--red); color: black; padding: 5px 15px; font-weight: 900; margin-bottom: 20px; display: inline-block; }
 .download-brutal-btn { 
     display: block; width: 100%; text-align: center; background: var(--red); color: black; 
-    padding: 25px; margin-top: 30px; text-decoration: none; font-weight: 900; font-size: 20px;
+    padding: 20px; margin-top: 30px; text-decoration: none; font-weight: 900; transition: 0.3s;
 }
+.download-brutal-btn:hover { background: white; box-shadow: 0 0 20px white; }
