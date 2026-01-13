@@ -1,14 +1,14 @@
-window.onload = function() {
-    if (document.getElementById('particles-js')) {
+document.addEventListener("DOMContentLoaded", function() {
+    if (typeof particlesJS !== 'undefined') {
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
                 "color": { "value": "#ff0000" },
-                "shape": { "type": "edge" }, // Square particles for brutal look
+                "shape": { "type": "edge" },
                 "opacity": { "value": 0.5, "random": true },
                 "size": { "value": 2, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.2, "width": 1 },
-                "move": { "enable": true, "speed": 3, "direction": "none", "random": true, "out_mode": "out" }
+                "line_linked": { "enable": true, "distance": 140, "color": "#ff0000", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 4, "direction": "none", "random": true, "out_mode": "out" }
             },
             "interactivity": {
                 "detect_on": "canvas",
@@ -16,8 +16,8 @@ window.onload = function() {
             },
             "retina_detect": true
         });
-        console.log("Terminal Particles: Initialized");
+        console.log("BENX!TER CORE: LOADED");
     } else {
-        console.error("Error: particles-js container not found.");
+        console.warn("Retrying particles load...");
     }
-};
+});
