@@ -17,10 +17,21 @@ window.onload = function() {
                 loader.style.display = "none";
                 mainUI.style.display = "block";
                 
-                // SPEC BOT DATA
-                document.getElementById('os-info').innerText = navigator.platform;
-                document.getElementById('cpu-info').innerText = navigator.vendor.split(' ')[0] || "HARDWARE";
-                document.getElementById('core-info').innerText = (navigator.hardwareConcurrency || "X") + " CORES";
+                // ADVANCED SCANNER LOGIC
+                document.getElementById('os-info').innerText = navigator.platform.toUpperCase();
+                document.getElementById('vendor-info').innerText = navigator.vendor.split(' ')[0] || "PC USER";
+                document.getElementById('core-info').innerText = (navigator.hardwareConcurrency || "X") + " THREADS";
+                document.getElementById('ram-info').innerText = (navigator.deviceMemory || "8") + " GB";
+                
+                // CPU & GPU DETECTION
+                let canvas = document.createElement("canvas");
+                let gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+                if (gl) {
+                    let debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+                    let renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+                    document.getElementById('gpu-info').innerText = renderer.split(' ').pop();
+                    document.getElementById('cpu-info').innerText = renderer.split(' ')[1] || "GENERIC";
+                }
 
                 if (window.particlesJS) {
                     particlesJS("particles-js", {
