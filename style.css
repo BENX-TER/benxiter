@@ -1,74 +1,53 @@
 :root {
     --red: #ff0000;
-    --dark-red: #440000;
     --black: #080808;
-    --font-main: 'Fira Code', monospace;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background-color: var(--black); color: var(--red); font-family: var(--font-main); overflow-x: hidden; }
+body { background: var(--black); color: var(--red); font-family: 'Fira Code', monospace; }
 
-/* Scanlines Overlap Fix */
-.scanlines {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
-    background-size: 100% 4px; z-index: 100; pointer-events: none;
+/* FIX: Text must stay on top */
+.terminal-wrapper { 
+    position: relative; 
+    z-index: 10; 
+    padding: 0 5%; 
+    display: block !important; 
 }
 
-#particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
-.terminal-wrapper { position: relative; z-index: 10; padding: 0 5%; }
-
-/* Navigation Bar Fix */
+/* Nav Bar Fix */
 .terminal-nav {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 5%; border-bottom: 1px solid var(--dark-red);
-    background: rgba(0,0,0,0.9); position: fixed; width: 100%; top: 0; z-index: 1000;
+    padding: 20px 5%; background: rgba(0,0,0,0.9);
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    border-bottom: 1px solid #400;
 }
-.blink { animation: blinker 1s linear infinite; color: #00ff00; }
-@keyframes blinker { 50% { opacity: 0; } }
+.nav-links a { color: var(--red); text-decoration: none; margin-left: 20px; font-weight: bold; }
 
-.nav-links a { 
-    color: var(--red); text-decoration: none; margin-left: 20px; 
-    font-size: 12px; font-weight: 700; transition: 0.2s;
-    padding: 5px 10px; border: 1px solid transparent;
-}
-.nav-links a:hover { border-color: var(--red); background: var(--dark-red); }
+/* Hero */
+.hero-brutal { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.glitch { font-family: 'Syncopate'; font-size: clamp(40px, 10vw, 100px); text-shadow: 2px 2px #400; }
+.console-text { margin: 20px 0; border-left: 3px solid var(--red); padding-left: 15px; }
 
-/* Hero Section */
-.hero-brutal { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; }
-.glitch {
-    font-size: clamp(40px, 10vw, 100px); font-family: 'Syncopate', sans-serif;
-    position: relative; text-shadow: 2px 0 0 rgba(255,0,0,0.5), -2px 0 0 rgba(0,255,0,0.5);
-    animation: glitch 0.3s infinite;
-}
-@keyframes glitch { 
-    0% { transform: skew(2deg); } 20% { transform: skew(-2deg); } 100% { transform: skew(0); } 
-}
-
-/* Modules Section */
+/* Module Grid */
 .module-section { padding: 100px 0; }
-.section-tag { margin-bottom: 30px; font-weight: 900; letter-spacing: 5px; opacity: 0.6; }
-.module-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 15px; 
-}
-.module-card { 
-    border: 1px solid var(--dark-red); padding: 25px; 
-    background: rgba(10, 0, 0, 0.6); transition: 0.3s;
-}
-.module-card h3 { font-size: 14px; margin-bottom: 10px; letter-spacing: 1px; }
-.module-card p { font-size: 11px; color: #666; }
-.module-card:hover { border-color: var(--red); background: var(--dark-red); transform: scale(1.02); }
-.glow-red { border-color: var(--red); box-shadow: inset 0 0 15px rgba(255,0,0,0.2); }
+.module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+.module-card { border: 1px solid #400; padding: 20px; background: rgba(20,0,0,0.5); }
+.glow-red { border-color: var(--red); box-shadow: 0 0 10px rgba(255,0,0,0.3); }
 
-/* Download Section */
+/* Download */
 .vault-brutal { padding: 100px 0 200px; }
-.brutal-container { border: 2px solid var(--red); padding: 40px; background: #000; position: relative; }
-.vault-header { background: var(--red); color: black; padding: 5px 15px; font-weight: 900; margin-bottom: 20px; display: inline-block; }
+.brutal-container { border: 2px solid var(--red); padding: 40px; background: #000; text-align: center; }
 .download-brutal-btn { 
-    display: block; width: 100%; text-align: center; background: var(--red); color: black; 
-    padding: 20px; margin-top: 30px; text-decoration: none; font-weight: 900; transition: 0.3s;
+    display: block; background: var(--red); color: black; 
+    padding: 20px; margin-top: 20px; text-decoration: none; font-weight: 900; 
 }
-.download-brutal-btn:hover { background: white; box-shadow: 0 0 20px white; }
+
+/* Scanlines Effect */
+.scanlines {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px; z-index: 5; pointer-events: none;
+}
+.blink { animation: b 1s infinite; color: #0f0; }
+@keyframes b { 50% { opacity: 0; } }
