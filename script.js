@@ -16,6 +16,12 @@ window.onload = function() {
             setTimeout(() => {
                 loader.style.display = "none";
                 mainUI.style.display = "block";
+                
+                // SPEC BOT DATA
+                document.getElementById('os-info').innerText = navigator.platform;
+                document.getElementById('cpu-info').innerText = navigator.vendor.split(' ')[0] || "HARDWARE";
+                document.getElementById('core-info').innerText = (navigator.hardwareConcurrency || "X") + " CORES";
+
                 if (window.particlesJS) {
                     particlesJS("particles-js", {
                         "particles": {
