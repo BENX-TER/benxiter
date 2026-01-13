@@ -2,7 +2,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background: var(--black); color: white; font-family: 'Fira Code', monospace; overflow-x: hidden; }
 
-/* PRELOADER */
+/* LOADER */
 #benx-loader { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; justify-content: center; align-items: center; }
 .loader-wrap { text-align: center; position: relative; }
 .circ-svg { width: 150px; height: 150px; transform: rotate(-90deg); }
@@ -11,22 +11,21 @@ body { background: var(--black); color: white; font-family: 'Fira Code', monospa
 .circ-svg .prog { stroke: var(--red); stroke-dasharray: 440; stroke-dashoffset: 440; filter: drop-shadow(0 0 10px var(--red)); }
 .load-num { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; font-weight: bold; }
 
-/* POWER BUTTON SHAKE */
-.p-btn { transition: 0.2s; cursor: pointer; text-decoration: none; display: inline-block; }
-.p-btn:hover { background: var(--red) !important; color: white !important; box-shadow: 0 0 50px var(--red); animation: shake 0.1s infinite; }
+/* POWER BUTTON */
+.p-btn:hover { background: var(--red) !important; color: white !important; box-shadow: 0 0 50px var(--red); animation: shake 0.1s infinite; transition: 0.1s; cursor: crosshair; }
 @keyframes shake { 0% { transform: translate(2px, 1px); } 50% { transform: translate(-2px, -1px); } 100% { transform: translate(1px, -2px); } }
 
-/* INTERFACE */
+/* NAV & HERO */
 .top-bar { position: fixed; width: 100%; top: 0; display: flex; justify-content: space-between; padding: 20px 10%; background: rgba(0,0,0,0.9); border-bottom: 2px solid var(--red); z-index: 1000; }
 .logo { font-family: 'Syncopate'; font-size: 22px; }
 .red { color: var(--red); text-shadow: 0 0 10px var(--red); }
 .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 11px; font-weight: bold; }
-
 .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
 .main-title { font-family: 'Syncopate'; font-size: clamp(40px, 10vw, 80px); }
 .red-glow { color: var(--red); text-shadow: 0 0 20px var(--red); }
-.inject-btn { border: 2px solid var(--red); padding: 20px 40px; color: var(--red); margin-top: 30px; font-weight: 900; }
+.inject-btn { border: 2px solid var(--red); padding: 20px 40px; color: var(--red); margin-top: 30px; font-weight: 900; text-decoration: none; }
 
+/* SECTIONS */
 .module-section { padding: 100px 10%; }
 .label-tag { font-size: 11px; color: #444; letter-spacing: 5px; margin-bottom: 30px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -34,14 +33,12 @@ body { background: var(--black); color: white; font-family: 'Fira Code', monospa
 .pulse-text { color: var(--red); font-size: 11px; margin-top: 10px; animation: pulse 1.5s infinite; font-weight: bold; }
 @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; text-shadow: 0 0 15px var(--red); } }
 
-.god-spacer { height: 350px; }
 .download-section { text-align: center; padding-bottom: 200px; }
-.title-big { font-family: 'Syncopate'; font-size: clamp(30px, 6vw, 55px); margin-bottom: 40px; }
 .dl-box { border: 2px solid var(--red); padding: 50px; background: black; display: inline-block; }
-.dl-main-btn { background: var(--red); color: white; padding: 15px 30px; margin-top: 20px; font-weight: 900; }
+.dl-main-btn { background: var(--red); color: white; padding: 15px 30px; margin-top: 20px; font-weight: 900; text-decoration: none; }
 
-/* UPGRADED SPEC BOT */
-#spec-bot { position: fixed; bottom: 20px; right: 20px; width: 260px; background: rgba(0,0,0,0.9); border: 1px solid var(--red); font-size: 10px; z-index: 1000; box-shadow: 0 0 15px var(--red); }
+/* SPEC BOT */
+#spec-bot { position: fixed; bottom: 20px; right: 20px; width: 260px; background: rgba(0,0,0,0.95); border: 1px solid var(--red); font-size: 10px; z-index: 1000; box-shadow: 0 0 15px var(--red); }
 .bot-header { background: var(--red); color: white; padding: 5px 10px; font-weight: bold; }
 .bot-body { padding: 15px; line-height: 1.6; }
 .bot-body p { margin-bottom: 4px; border-bottom: 1px solid #111; padding-bottom: 2px; }
