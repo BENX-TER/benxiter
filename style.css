@@ -1,66 +1,82 @@
 :root {
     --red: #ff0000;
-    --red-bg: rgba(255, 0, 0, 0.1);
-    --dark: #050505;
-    --glass: rgba(255, 255, 255, 0.02);
+    --dark: #000000;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; background-color: var(--dark); }
-body { color: white; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+html { scroll-behavior: smooth; }
+body { background: var(--dark); color: white; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
 
-/* Background */
-#particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; opacity: 0.5; }
-.scroller-container { position: relative; z-index: 10; }
+#particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; opacity: 0.4; }
 
-/* God Nav */
+/* God Nav - Floating & Minimal */
 .god-nav {
+    position: fixed; width: 100%; top: 40px; z-index: 1000; padding: 0 5%;
+}
+.nav-container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex; justify-content: space-between; align-items: center;
-    padding: 40px 8%; position: fixed; width: 100%; top: 0; z-index: 1000;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-    backdrop-filter: blur(10px);
+    padding: 20px 40px; border-radius: 100px;
 }
-.logo { font-family: 'Syncopate', sans-serif; font-size: 28px; letter-spacing: 4px; font-weight: 700; }
-.red-text { color: var(--red); }
-.nav-links { list-style: none; display: flex; gap: 50px; align-items: center; }
-.nav-links a { text-decoration: none; color: #777; font-weight: 500; font-size: 13px; letter-spacing: 2px; transition: 0.4s; }
-.nav-links a:hover { color: white; }
-.discord-pill { border: 1px solid var(--red); padding: 10px 25px; border-radius: 50px; color: white !important; background: var(--red-bg); }
+.logo { font-family: 'Syncopate'; font-weight: 700; letter-spacing: 5px; font-size: 20px; }
+.red-text { color: var(--red); text-shadow: 0 0 10px var(--red); }
+.nav-links a { text-decoration: none; color: #666; font-size: 11px; font-weight: 900; letter-spacing: 2px; margin-left: 30px; transition: 0.3s; }
+.nav-links a:hover, .neon-link { color: var(--red) !important; }
 
-/* God Hero */
-.god-hero { height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 10%; }
-.status-badge { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 900; letter-spacing: 2px; color: #00ff00; margin-bottom: 30px; }
-.dot { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00; }
-.god-title { font-family: 'Syncopate', sans-serif; font-size: clamp(60px, 10vw, 130px); line-height: 0.9; margin-bottom: 30px; letter-spacing: -5px; }
-.red-glow { color: var(--red); text-shadow: 0 0 50px rgba(255,0,0,0.4); }
-.god-subtitle { font-size: 22px; color: #888; max-width: 800px; line-height: 1.5; margin-bottom: 50px; }
-
-/* Buttons */
-.god-actions { display: flex; gap: 20px; }
-.btn-primary-god { background: white; color: black; padding: 22px 50px; font-weight: 900; text-decoration: none; border-radius: 2px; letter-spacing: 1px; transition: 0.3s; }
-.btn-primary-god:hover { background: var(--red); color: white; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255,0,0,0.3); }
-.btn-secondary-god { border: 1px solid #333; color: white; padding: 22px 50px; font-weight: 900; text-decoration: none; border-radius: 2px; transition: 0.3s; }
-
-/* God Features */
-.god-features { padding: 150px 10%; }
-.section-label { font-size: 12px; color: var(--red); font-weight: 900; letter-spacing: 5px; margin-bottom: 60px; text-align: center; }
-.god-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-.feature-card-god { background: var(--glass); border: 1px solid rgba(255,255,255,0.05); padding: 80px 50px; position: relative; overflow: hidden; }
-.card-bg-text { position: absolute; font-family: 'Syncopate'; font-size: 150px; color: rgba(255,255,255,0.02); bottom: -30px; right: -20px; pointer-events: none; }
-.feature-card-god h3 { font-family: 'Syncopate'; font-size: 20px; margin-bottom: 20px; letter-spacing: 2px; }
-.feature-card-god p { color: #666; line-height: 1.8; font-size: 16px; }
-
-/* Download Card */
-.god-download { padding: 150px 10%; }
-.god-card-main { background: var(--glass); border: 1px solid var(--red); padding: 100px 50px; border-radius: 4px; text-align: center; max-width: 1000px; margin: 0 auto; backdrop-filter: blur(20px); }
-.card-header-god h2 { font-family: 'Syncopate'; font-size: 40px; margin-bottom: 10px; }
-.card-body-god p { color: #888; margin: 30px auto; max-width: 600px; font-size: 18px; line-height: 1.6; }
-
-.download-button-god { 
-    display: inline-block; background: var(--red); color: white; padding: 25px 80px; 
-    font-weight: 900; font-size: 18px; text-decoration: none; position: relative; overflow: hidden; letter-spacing: 2px;
+/* Hero - Full Screen Cinematic */
+.hero-god {
+    height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; z-index: 10;
 }
-.shimmer-god { position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: sweep 3s infinite; }
+.side-text {
+    position: absolute; left: 5%; bottom: 100px; writing-mode: vertical-rl;
+    font-size: 12px; letter-spacing: 5px; color: #333; font-weight: 900;
+}
+.center-content { text-align: center; }
+.outline-text {
+    font-family: 'Syncopate'; font-size: clamp(80px, 15vw, 200px);
+    line-height: 0.8; -webkit-text-stroke: 2px white; color: transparent;
+}
+.filled-text {
+    font-family: 'Syncopate'; font-size: clamp(80px, 15vw, 200px);
+    line-height: 0.8; color: var(--red); text-shadow: 0 0 50px rgba(255,0,0,0.3);
+}
+.hero-desc { margin-top: 30px; font-size: 14px; letter-spacing: 8px; color: #666; font-weight: 200; }
+
+/* Buttons - God Mode */
+.hero-btns { margin-top: 50px; display: flex; justify-content: center; gap: 20px; }
+.god-btn-primary { background: white; color: black; padding: 20px 45px; text-decoration: none; font-weight: 900; letter-spacing: 2px; transition: 0.4s; }
+.god-btn-primary:hover { background: var(--red); color: white; transform: scale(1.1); box-shadow: 0 0 50px var(--red); }
+.god-btn-secondary { border: 1px solid #333; color: white; padding: 20px 45px; text-decoration: none; font-weight: 900; letter-spacing: 2px; }
+
+/* Systems - High End Grid */
+.systems-god { padding: 150px 10%; position: relative; z-index: 10; }
+.grid-god { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.system-card {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+    padding: 60px 40px; transition: 0.5s;
+}
+.system-card:hover { background: rgba(255,255,255,0.05); transform: translateY(-10px); }
+.red-glow-border { border-color: var(--red); box-shadow: 0 0 30px rgba(255,0,0,0.1); }
+.card-header { font-family: 'Syncopate'; font-size: 14px; margin-bottom: 20px; color: var(--red); letter-spacing: 3px; }
+.system-card p { color: #888; line-height: 1.8; font-size: 15px; }
+
+/* The Vault - Premium Download */
+.vault-god { padding: 100px 10% 200px; position: relative; z-index: 10; }
+.vault-box {
+    background: linear-gradient(145deg, #0a0a0a, #000);
+    border: 1px solid #1a1a1a; padding: 100px 50px; text-align: center; border-radius: 5px;
+}
+.vault-header { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; }
+.status-pulse { width: 10px; height: 10px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 15px #00ff00; }
+.vault-header h3 { font-family: 'Syncopate'; font-size: 24px; letter-spacing: 2px; }
+.vault-box p { color: #555; max-width: 600px; margin: 0 auto 50px; font-size: 18px; }
+
+.download-trigger {
+    display: inline-block; background: var(--red); color: white; padding: 25px 80px;
+    font-weight: 900; letter-spacing: 4px; text-decoration: none; position: relative; overflow: hidden;
+}
+.btn-shimmer { position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: sweep 4s infinite; }
 
 @keyframes sweep { 100% { left: 100%; } }
-.god-footer { padding: 100px; text-align: center; color: #222; font-size: 12px; font-weight: 900; letter-spacing: 5px; }
