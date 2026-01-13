@@ -3,71 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BENX!TER // AUTHORIZED</title>
+    <title>BENX!TER // TERMINAL</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Outfit:wght@200;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="brutal-ui">
 
+    <div class="scanlines"></div>
     <div id="particles-js"></div>
-    
-    <nav class="god-nav">
-        <div class="nav-container">
-            <div class="logo">BENX<span class="red-text">!</span>TER</div>
-            <div class="nav-links">
-                <a href="#home">01. HOME</a>
-                <a href="#features">02. SYSTEMS</a>
-                <a href="#download">03. DOWNLOAD</a>
-                <a href="https://discord.gg/yourlink" class="neon-link">DISCORD</a>
-            </div>
+
+    <nav class="terminal-nav">
+        <div class="status-indicator">
+            <span class="blink">●</span> SYSTEM_CONNECTED
+        </div>
+        <div class="nav-links">
+            <a href="#home">[ HOME ]</a>
+            <a href="#features">[ MODULES ]</a>
+            <a href="#download">[ DOWNLOAD ]</a>
         </div>
     </nav>
 
-    <section id="home" class="hero-god">
-        <div class="side-text">ULTIMATE EDITION // 2026</div>
-        <div class="center-content">
-            <h1 class="outline-text">BENX</h1>
-            <h1 class="filled-text">!TER</h1>
-            <p class="hero-desc">BEYOND PERFORMANCE. BEYOND GAMING. GOD MODE ACTIVATED.</p>
-            <div class="hero-btns">
-                <a href="#download" class="god-btn-primary">GET THE TOOL</a>
-                <a href="#features" class="god-btn-secondary">SPECS</a>
+    <main class="terminal-wrapper">
+        <section id="home" class="hero-brutal">
+            <div class="glitch-box">
+                <h1 class="glitch" data-text="BENX!TER">BENX!TER</h1>
             </div>
-        </div>
-    </section>
+            <div class="console-text">
+                <p class="typewriter">> INITIALIZING BYPASS...</p>
+                <p class="typewriter" style="animation-delay: 1s;">> KERNEL DRIVER LOADED [SUCCESS]</p>
+                <p class="typewriter" style="animation-delay: 2s;">> STATUS: <span class="red-bright">UNDETECTED</span></p>
+            </div>
+            <div class="action-row">
+                <a href="#download" class="brutal-btn">EXECUTE_LOADER</a>
+            </div>
+        </section>
 
-    <section id="features" class="systems-god">
-        <div class="container-god">
-            <div class="grid-god">
-                <div class="system-card">
-                    <div class="card-header">KERNEL_LEVEL</div>
-                    <p>Total system authority. Ring-0 driver bypass for absolute invisibility.</p>
-                </div>
-                <div class="system-card red-glow-border">
-                    <div class="card-header">0_LATENCY</div>
-                    <p>Optimized packet routing and memory flushing for frame-perfect response.</p>
-                </div>
-                <div class="system-card">
-                    <div class="card-header">AUTO_SYNC</div>
-                    <p>Cloud-based architecture ensures you are always on the latest version.</p>
-                </div>
+        <section id="features" class="module-grid">
+            <div class="module-card">
+                <div class="module-header">M_01 // AIM_ASSIST</div>
+                <p>Vector-based prediction engine with humanized smoothing algorithms.</p>
             </div>
-        </div>
-    </section>
+            <div class="module-card">
+                <div class="module-header">M_02 // ESP_CORE</div>
+                <p>Ultra-thin boxes, skeleton tracking, and item filtering at 0% FPS drop.</p>
+            </div>
+            <div class="module-card">
+                <div class="module-header">M_03 // BYPASS_X</div>
+                <p>Advanced ring-0 instruction masking for top-tier Anti-Cheats.</p>
+            </div>
+        </section>
 
-    <section id="download" class="vault-god">
-        <div class="vault-box">
-            <div class="vault-header">
-                <span class="status-pulse"></span>
-                <h3>V1.0.4 LAG_FIXER_TOOL</h3>
+        <section id="download" class="vault-brutal">
+            <div class="brutal-container">
+                <div class="vault-header">AUTHENTICATED_DOWNLOAD_ACCESS</div>
+                <div class="vault-content">
+                    <h2>LAG_FIXER_V1.EXE</h2>
+                    <p>Optimizes system threads, flushes TCP buffers, and disables DWM latency. Use at own risk.</p>
+                    <a href="https://drive.google.com/file/d/10hIuzEnvGMkQz3aklbd7BRpvZ90kDtdK/view?usp=sharing" target="_blank" class="download-brutal-btn">
+                        START_INJECTION
+                    </a>
+                </div>
             </div>
-            <p>The ultimate Windows optimization suite for competitive dominance. Removes standby memory bloat and stabilizes frame times.</p>
-            <a href="https://drive.google.com/file/d/10hIuzEnvGMkQz3aklbd7BRpvZ90kDtdK/view?usp=sharing" target="_blank" class="download-trigger">
-                EXECUTE DOWNLOAD
-                <div class="btn-shimmer"></div>
-            </a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
