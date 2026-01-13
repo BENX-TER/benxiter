@@ -18,24 +18,24 @@ window.onload = function() {
                 setTimeout(() => {
                     loader.style.display = "none";
                     mainUI.style.display = "block";
-                    startHardwareScan();
+                    startSystemUI();
                 }, 500);
             }, 500);
         }
     }, 20);
 
-    function startHardwareScan() {
-        document.getElementById('os-info').innerText = navigator.platform;
-        document.getElementById('cpu-info').innerText = navigator.hardwareConcurrency + " CORES";
+    function startSystemUI() {
+        document.getElementById('os-info').innerText = navigator.platform.toUpperCase();
+        document.getElementById('core-info').innerText = (navigator.hardwareConcurrency || "4") + " THREADS";
         document.getElementById('ram-info').innerText = (navigator.deviceMemory || "8") + " GB";
         
-        // GPU Detection
         let canvas = document.createElement("canvas");
         let gl = canvas.getContext("webgl");
         if (gl) {
             let debug = gl.getExtension("WEBGL_debug_renderer_info");
             let renderer = gl.getParameter(debug.UNMASKED_RENDERER_WEBGL);
             document.getElementById('gpu-info').innerText = renderer.split(' ').pop();
+            document.getElementById('cpu-info').innerText = "STABLE";
         }
 
         particlesJS("particles-js", {
